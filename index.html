@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>사단법인 사비나래 | Sabinare</title>
+<meta name="description" content="백제의 옛 수도 사비(부여)에서 세계로 — 사단법인 사비나래 국제문화교류">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F3EDE1;
+  --paper-2:#EAE1CE;
+  --paper-3:#E0D4BC;
+  --ink:#2A2724;
+  --ink-soft:#5E5850;
+  --ink-mute:#8C8478;
+  --line:rgba(42,39,36,.16);
+  --vermilion:#9E3B2A;
+  --gold:#A9843F;
+  --river:#1F3442;
+  --river-2:#2C4A5C;
+  --serif:"Nanum Myeongjo",serif;
+  --sans:"Noto Sans KR",system-ui,sans-serif;
+  --latin:"Cormorant Garamond",serif;
+  --wrap:1200px;
+  --gutter:clamp(16px,4vw,40px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:400;
+  line-height:1.75;letter-spacing:-.01em;word-break:keep-all;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+/* hanji fibre texture */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.35;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45  0 0 0 0 .38  0 0 0 0 .28  0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+.serif{font-family:var(--serif)}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.18em;
+  color:var(--vermilion);font-weight:500;text-transform:uppercase;
+}
+.eyebrow svg{width:18px;height:18px}
+h2.title{font-family:var(--serif);font-weight:800;font-size:clamp(28px,4vw,46px);line-height:1.35;letter-spacing:-.03em;margin:18px 0 22px}
+.lead{color:var(--ink-soft);font-size:clamp(15px,1.4vw,17px);max-width:640px}
+section{position:relative}
+
+/* ---------- header ---------- */
+.hd{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s,box-shadow .4s,padding .4s;padding:22px 0}
+.hd.scrolled{background:rgba(243,237,225,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line);padding:12px 0}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.hd .brand img{height:30px;width:auto}
+.nav{display:flex;gap:34px;font-size:15px;font-weight:500}
+.nav a{position:relative;padding:4px 0;color:var(--ink)}
+.nav a::after{content:"";position:absolute;left:50%;bottom:-2px;width:0;height:1px;background:var(--vermilion);transition:.3s;transform:translateX(-50%)}
+.nav a:hover::after{width:100%}
+.hd-cta{font-size:14px;border:1px solid var(--ink);padding:8px 18px;border-radius:999px;transition:.3s;white-space:nowrap}
+.hd-cta:hover{background:var(--ink);color:var(--paper)}
+.burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer}
+.burger span{display:block;width:22px;height:1.5px;background:var(--ink);margin:6px auto;transition:.3s}
+
+/* ---------- hero ---------- */
+.hero{min-height:100vh;display:flex;align-items:center;padding:130px 0 90px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,80px);align-items:center;width:100%}
+.hero-copy .eyebrow{margin-bottom:28px}
+.hero-logo{width:min(400px,100%);margin-bottom:10px}
+.hero-en{width:120px;margin:0 0 30px 4px;opacity:.75}
+.hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(28px,3.4vw,44px);line-height:1.38;letter-spacing:-.035em}
+.hero h1 em{font-style:normal;color:var(--vermilion)}
+.hero p{margin-top:22px;color:var(--ink-soft);font-size:clamp(15px,1.4vw,17px);max-width:500px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;font-size:15px;font-weight:500;border-radius:2px;transition:.3s}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn.primary:hover{background:var(--vermilion)}
+.btn.ghost{border:1px solid var(--ink)}
+.btn.ghost:hover{background:var(--paper-2)}
+.btn svg{width:16px;height:16px;transition:transform .3s}
+.btn:hover svg{transform:translateX(4px)}
+
+.hero-art{position:relative;justify-self:end;width:min(500px,100%)}
+.arch{
+  position:relative;aspect-ratio:4/5;border-radius:999px 999px 6px 6px;overflow:hidden;
+  box-shadow:0 30px 60px -30px rgba(42,39,36,.45);
+  outline:1px solid var(--ink);outline-offset:10px;
+}
+.arch img{width:100%;height:100%;object-fit:cover;object-position:60% 50%;filter:sepia(.15) saturate(.9);transform:scale(1.06);transition:transform 8s ease}
+.hero.in .arch img{transform:scale(1)}
+.seal{
+  position:absolute;left:-34px;bottom:70px;width:108px;height:108px;background:var(--vermilion);color:#F6E9DC;
+  display:grid;place-items:center;font-family:var(--serif);font-weight:800;font-size:38px;line-height:1.05;text-align:center;
+  border-radius:6px;transform:rotate(-6deg);box-shadow:0 10px 24px -10px rgba(120,30,20,.6)
+}
+.seal::after{content:"";position:absolute;inset:6px;border:1.5px solid rgba(246,233,220,.7);border-radius:3px}
+.vertical{
+  position:absolute;right:-46px;top:40px;writing-mode:vertical-rl;font-family:var(--serif);font-size:15px;
+  letter-spacing:.35em;color:var(--ink-soft)
+}
+.vertical b{color:var(--ink);font-weight:700}
+.hero-mountains{position:absolute;left:0;bottom:0;width:100%;height:120px;opacity:.5;pointer-events:none}
+.scroll-cue{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);font-size:11px;letter-spacing:.3em;color:var(--ink-mute);display:flex;flex-direction:column;align-items:center;gap:10px}
+.scroll-cue i{width:1px;height:40px;background:linear-gradient(var(--ink-mute),transparent);animation:drip 2s infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---------- marquee ---------- */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper-2);overflow:hidden;padding:18px 0}
+.marquee .track{display:flex;gap:56px;width:max-content;animation:flow 40s linear infinite;font-family:var(--serif);font-size:clamp(17px,2vw,22px);white-space:nowrap;color:var(--ink-soft)}
+.marquee .track span{display:flex;align-items:center;gap:56px}
+.marquee .track b{color:var(--ink);font-weight:800;letter-spacing:.12em}
+.marquee svg{width:22px;height:22px;color:var(--vermilion)}
+@keyframes flow{to{transform:translateX(-50%)}}
+
+/* ---------- story (사비 + 나래) ---------- */
+.story{padding:clamp(90px,12vw,160px) 0}
+.story-head{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:70px}
+.equation{display:grid;grid-template-columns:1fr auto 1fr auto 1.2fr;align-items:stretch;gap:0}
+.eq-card{padding:44px 36px;border:1px solid var(--line);background:rgba(255,255,255,.25);position:relative}
+.eq-card .hanja{font-family:var(--serif);font-size:64px;font-weight:800;line-height:1;color:var(--ink)}
+.eq-card h3{font-family:var(--serif);font-size:24px;margin:18px 0 10px;font-weight:800}
+.eq-card h3 small{font-family:var(--latin);font-style:italic;font-size:18px;color:var(--ink-mute);margin-left:8px;font-weight:500}
+.eq-card p{color:var(--ink-soft);font-size:15px}
+.eq-op{display:grid;place-items:center;padding:0 18px;font-family:var(--serif);font-size:34px;color:var(--vermilion)}
+.eq-card.result{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.eq-card.result p{color:rgba(243,237,225,.75)}
+.eq-card.result img{height:52px;width:auto}
+.eq-card.result h3{color:var(--paper)}
+.eq-card .wing{position:absolute;right:20px;top:20px;width:70px;opacity:.2}
+
+/* ---------- history ---------- */
+.history{background:var(--river);color:var(--paper);padding:clamp(90px,12vw,150px) 0;overflow:hidden}
+.history::before{
+  content:"";position:absolute;inset:0;background:url(assets/baekje-3.jpg) center/cover;opacity:.13;filter:grayscale(1) contrast(1.1);
+}
+.history::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--river) 0%,transparent 30%,transparent 70%,var(--river) 100%)}
+.history .wrap{position:relative;z-index:1}
+.history .eyebrow{color:#D9B26A}
+.history .lead{color:rgba(243,237,225,.72)}
+.timeline{margin-top:70px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.timeline::before{content:"";position:absolute;left:0;right:0;top:9px;height:1px;background:rgba(243,237,225,.25)}
+.tl{padding-right:28px;position:relative}
+.tl .dot{width:19px;height:19px;border-radius:50%;border:1px solid #D9B26A;background:var(--river);display:grid;place-items:center;margin-bottom:26px}
+.tl .dot::after{content:"";width:7px;height:7px;border-radius:50%;background:#D9B26A}
+.tl .yr{font-family:var(--latin);font-size:44px;line-height:1;color:#E9D3A6}
+.tl .yr small{font-size:15px;margin-left:4px;color:rgba(243,237,225,.6);font-family:var(--sans)}
+.tl h4{font-family:var(--serif);font-size:19px;margin:14px 0 8px;font-weight:700}
+.tl p{font-size:14px;color:rgba(243,237,225,.68)}
+.timeline.now{margin-top:56px}
+.timeline.now .dot{border-color:#E07A62}
+.timeline.now .dot::after{background:#E07A62}
+.timeline.now .yr{color:#F2B8A6}
+.bridge{display:flex;align-items:center;gap:18px;margin-top:64px;font-family:var(--serif);font-size:15px;color:rgba(243,237,225,.6)}
+.bridge::before,.bridge::after{content:"";flex:1;height:1px;background:repeating-linear-gradient(90deg,rgba(243,237,225,.35) 0 6px,transparent 6px 12px)}
+
+/* ---------- programs ---------- */
+.programs{padding:clamp(90px,12vw,160px) 0}
+.prog-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:60px;flex-wrap:wrap}
+.prog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.prog{display:grid;grid-template-columns:200px 1fr;background:#FBF8F1;border:1px solid var(--line);transition:transform .4s,box-shadow .4s;overflow:hidden}
+.prog:hover{transform:translateY(-6px);box-shadow:0 24px 40px -24px rgba(42,39,36,.35)}
+.prog .thumb{position:relative;overflow:hidden;background:var(--paper-3)}
+.prog .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.prog:hover .thumb img{transform:scale(1.05)}
+.prog .body{padding:32px 30px;display:flex;flex-direction:column}
+.prog .no{font-family:var(--latin);font-size:16px;color:var(--vermilion);letter-spacing:.1em}
+.prog h3{font-family:var(--serif);font-size:23px;font-weight:800;margin:6px 0 12px;line-height:1.4}
+.prog p{color:var(--ink-soft);font-size:14.5px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:20px}
+.tags span{font-size:12px;padding:3px 10px;border:1px solid var(--line);border-radius:999px;color:var(--ink-soft)}
+
+/* ---------- gallery ---------- */
+.gallery{padding:0 0 clamp(90px,12vw,160px)}
+.gal-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:44px;flex-wrap:wrap}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;grid-auto-flow:dense;gap:12px}
+.gal-grid figure{position:relative;overflow:hidden;background:var(--paper-3)}
+.gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .7s,filter .7s;filter:saturate(.85)}
+.gal-grid figure:hover img{transform:scale(1.06);filter:saturate(1)}
+.gal-grid figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 16px 12px;font-size:13px;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.55));opacity:0;transform:translateY(8px);transition:.4s}
+.gal-grid figure:hover figcaption{opacity:1;transform:none}
+.g-wide{grid-column:span 2}
+.g-tall{grid-row:span 2}
+.g-big{grid-column:span 2;grid-row:span 2}
+
+/* ---------- greeting ---------- */
+.greeting{background:var(--paper-2);padding:clamp(90px,12vw,150px) 0;overflow:hidden}
+.greeting .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,7vw,100px);align-items:center}
+.portrait{position:relative}
+.portrait .frame{aspect-ratio:4/5;overflow:hidden;border-radius:999px 999px 4px 4px;background:var(--paper-3)}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.portrait .lotus-bg{position:absolute;width:150%;left:-25%;top:-15%;color:var(--paper-3);z-index:-1}
+.greeting blockquote{font-family:var(--serif);font-size:clamp(22px,2.6vw,32px);line-height:1.55;font-weight:700;letter-spacing:-.03em;margin:20px 0 30px}
+.greeting blockquote::before{content:"“";display:block;font-family:var(--latin);font-size:90px;line-height:.6;color:var(--vermilion);margin-bottom:10px}
+.greeting .text p{color:var(--ink-soft);margin-bottom:14px}
+.sign{display:flex;align-items:center;gap:16px;margin-top:30px;padding-top:24px;border-top:1px solid var(--line)}
+.sign small{color:var(--ink-mute);font-size:13px}
+.sign b{font-family:var(--serif);font-size:22px}
+.placeholder{display:inline-block;font-size:11px;color:var(--vermilion);border:1px dashed var(--vermilion);padding:1px 8px;border-radius:3px;margin-left:8px;vertical-align:middle;font-family:var(--sans)}
+
+/* ---------- news ---------- */
+.news{padding:clamp(90px,12vw,150px) 0}
+.news .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+.news-list{border-top:1.5px solid var(--ink)}
+.news-item{display:grid;grid-template-columns:90px 1fr auto;gap:24px;align-items:center;padding:26px 6px;border-bottom:1px solid var(--line);transition:.3s}
+.news-item:hover{background:rgba(255,255,255,.35);padding-left:16px}
+.badge{font-size:12px;font-weight:700;color:var(--vermilion);border:1px solid var(--vermilion);text-align:center;padding:3px 0;border-radius:2px}
+.badge.gray{color:var(--ink-soft);border-color:var(--ink-mute)}
+.news-item h4{font-size:17px;font-weight:500}
+.news-item p{font-size:13.5px;color:var(--ink-mute);margin-top:2px}
+.news-item time{font-family:var(--latin);font-size:17px;color:var(--ink-mute)}
+
+/* ---------- contact / cta ---------- */
+.cta{background:var(--ink);color:var(--paper);padding:clamp(90px,12vw,150px) 0;overflow:hidden;text-align:center}
+.cta::before{content:"";position:absolute;inset:0;background:url(assets/baekje-1.jpg) center 30%/cover;opacity:.12;filter:grayscale(1)}
+.cta .wrap{position:relative}
+.cta .lotus-big{width:80px;color:#D9B26A;margin:0 auto 30px}
+.cta h2{font-family:var(--serif);font-weight:800;font-size:clamp(28px,4.4vw,52px);line-height:1.35;letter-spacing:-.03em}
+.cta p{color:rgba(243,237,225,.7);margin:20px auto 0;max-width:520px}
+.contact-row{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:48px}
+.contact-card{display:flex;align-items:center;gap:14px;padding:18px 26px;border:1px solid rgba(243,237,225,.25);min-width:250px;text-align:left;transition:.3s}
+.contact-card:hover{background:rgba(243,237,225,.08);border-color:rgba(243,237,225,.5)}
+.contact-card svg{width:24px;height:24px;color:#D9B26A;flex:none}
+.contact-card small{display:block;font-size:12px;color:rgba(243,237,225,.55);letter-spacing:.1em}
+.contact-card b{font-weight:500;font-size:17px}
+
+/* ---------- footer ---------- */
+.ft{background:#1E1C1A;color:rgba(243,237,225,.6);padding:60px 0 40px;font-size:13.5px}
+.ft .top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;padding-bottom:36px;border-bottom:1px solid rgba(243,237,225,.12)}
+.ft .logos{display:flex;align-items:center;gap:20px}
+.ft .logos img:first-child{height:34px;width:auto}
+.ft .logos img:last-child{height:26px;width:auto;opacity:.7}
+.ft dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px}
+.ft dt{color:rgba(243,237,225,.4)}
+.ft .bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:26px;font-size:12.5px}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(28px);transition:opacity 1s ease,transform 1s ease}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}.rv.d3{transition-delay:.36s}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.marquee .track{animation:none}*{scroll-behavior:auto}}
+
+/* ---------- responsive ---------- */
+@media (max-width:1024px){
+  .nav,.hd-cta{display:none}
+  .burger{display:block}
+  .nav.open{display:flex;position:fixed;inset:64px 0 auto 0;flex-direction:column;gap:0;background:var(--paper);padding:10px var(--gutter) 24px;box-shadow:0 20px 30px -20px rgba(0,0,0,.2)}
+  .nav.open a{padding:14px 0;border-bottom:1px solid var(--line)}
+  .equation{grid-template-columns:1fr;gap:0}
+  .eq-op{padding:10px 0}
+  .timeline{grid-template-columns:repeat(2,1fr);row-gap:44px}
+  .timeline::before{display:none}
+  .prog-grid{grid-template-columns:1fr}
+}
+@media (max-width:820px){
+  .hero{padding-top:110px}
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-art{justify-self:center;width:min(400px,86%);margin-top:20px}
+  .vertical{right:-34px;font-size:13px}
+  .seal{left:-20px;width:84px;height:84px;font-size:30px}
+  .story-head,.greeting .wrap,.news .wrap{grid-template-columns:1fr;gap:30px}
+  .gal-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}
+  .g-big{grid-column:span 2}
+  .portrait{max-width:360px}
+}
+@media (max-width:560px){
+  .prog{grid-template-columns:1fr}
+  .prog .thumb{aspect-ratio:16/10}
+  .timeline{grid-template-columns:1fr}
+  .news-item{grid-template-columns:70px 1fr;gap:14px}
+  .news-item time{grid-column:2;font-size:15px}
+  .contact-card{min-width:0;width:100%}
+  .vertical{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- SVG motifs: 백제 연화문 수막새(lotus roof-tile) & 산수문전(landscape tile) mountains -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="lotus" viewBox="-50 -50 100 100">
+      <circle r="47" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle r="41" fill="none" stroke="currentColor" stroke-width="1"/>
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+        <path id="petal" d="M0-11 C9-17 11-30 0-38 C-11-30 -9-17 0-11Z"/>
+        <use href="#petal" transform="rotate(45)"/><use href="#petal" transform="rotate(90)"/>
+        <use href="#petal" transform="rotate(135)"/><use href="#petal" transform="rotate(180)"/>
+        <use href="#petal" transform="rotate(225)"/><use href="#petal" transform="rotate(270)"/>
+        <use href="#petal" transform="rotate(315)"/>
+      </g>
+      <g fill="currentColor">
+        <circle r="2.2" cy="-31"/><circle r="2.2" cy="-31" transform="rotate(45)"/><circle r="2.2" cy="-31" transform="rotate(90)"/>
+        <circle r="2.2" cy="-31" transform="rotate(135)"/><circle r="2.2" cy="-31" transform="rotate(180)"/><circle r="2.2" cy="-31" transform="rotate(225)"/>
+        <circle r="2.2" cy="-31" transform="rotate(270)"/><circle r="2.2" cy="-31" transform="rotate(315)"/>
+      </g>
+      <circle r="9" fill="currentColor"/>
+      <g fill="var(--paper,#F3EDE1)"><circle r="1.6"/><circle r="1.4" cx="4.6"/><circle r="1.4" cx="-4.6"/><circle r="1.4" cy="4.6"/><circle r="1.4" cy="-4.6"/></g>
+    </symbol>
+    <pattern id="sansu" width="120" height="60" patternUnits="userSpaceOnUse">
+      <path d="M0 60 Q12 18 30 60 Q44 8 60 60 Q74 22 90 60 Q104 4 120 60" fill="none" stroke="#2A2724" stroke-width="1.2"/>
+      <path d="M8 60 Q18 32 30 60 M42 60 Q52 26 60 60 M78 60 Q86 36 90 60 M100 60 Q110 22 120 60" fill="none" stroke="#2A2724" stroke-width=".8"/>
+    </pattern>
+  </defs>
+</svg>
+
+<header class="hd" id="hd">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="사비나래 홈"><img src="assets/logo-ko-ink.png" alt="사비나래"></a>
+    <nav class="nav" id="nav">
+      <a href="#story">사비나래</a>
+      <a href="#history">사비 이야기</a>
+      <a href="#programs">교류 사업</a>
+      <a href="#gallery">활동 기록</a>
+      <a href="#news">소식</a>
+    </nav>
+    <a href="#contact" class="hd-cta">참여 문의</a>
+    <button class="burger" id="burger" aria-label="메뉴"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="eyebrow rv"><svg><use href="#lotus"/></svg>Buyeo · Baekje Capital 泗沘</span>
+      <img class="hero-logo rv d1" src="assets/logo-ko-ink.png" alt="사비나래">
+      <img class="hero-en rv d1" src="assets/logo-en-ink.png" alt="Sabinare">
+      <h1 class="rv d2">천사백 년 전 사비가 그랬듯,<br>다시 <em>바다 너머 세계</em>와<br>만납니다.</h1>
+      <p class="rv d3">사단법인 사비나래는 백제의 옛 수도 사비, 오늘의 부여에서 청소년과 시민이 세계와 마주하는 국제문화교류를 만들어 갑니다.</p>
+      <div class="btns rv d3">
+        <a class="btn primary" href="#programs">교류 사업 보기 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 8h13M9 3l5 5-5 5"/></svg></a>
+        <a class="btn ghost" href="#story">사비나래 이야기</a>
+      </div>
+    </div>
+    <div class="hero-art rv d2">
+      <div class="arch"><img src="assets/baekje-3.jpg" alt="백제 사비 포구에서 배가 오가는 모습을 그린 삽화"></div>
+      <div class="seal">泗<br>沘</div>
+      <div class="vertical"><b>백제의 마지막 수도</b> · 사비에서 세계로</div>
+    </div>
+  </div>
+  <svg class="hero-mountains" preserveAspectRatio="none"><rect width="100%" height="100%" fill="url(#sansu)" opacity=".35"/></svg>
+  <div class="scroll-cue">SCROLL<i></i></div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span><b>儉而不陋 華而不侈</b>검소하되 누추하지 않고, 화려하되 사치스럽지 않다<svg><use href="#lotus"/></svg>사비에서 세계로, 나래를 펴다<svg><use href="#lotus"/></svg></span>
+    <span><b>儉而不陋 華而不侈</b>검소하되 누추하지 않고, 화려하되 사치스럽지 않다<svg><use href="#lotus"/></svg>사비에서 세계로, 나래를 펴다<svg><use href="#lotus"/></svg></span>
+  </div>
+</div>
+
+<!-- STORY -->
+<section class="story" id="story">
+  <div class="wrap">
+    <div class="story-head">
+      <div>
+        <span class="eyebrow rv"><svg><use href="#lotus"/></svg>Brand Story</span>
+        <h2 class="title rv d1">사비의 문화에<br>날개를 달다</h2>
+      </div>
+      <p class="lead rv d2">‘사비나래’는 백제의 수도 <b>사비(泗沘)</b>와 날개를 뜻하는 우리말 <b>나래</b>를 더한 이름입니다. 백제가 바다 건너 이웃과 문화를 나누었던 것처럼, 부여의 이야기가 세계로 날아가고 세계의 이야기가 부여에 내려앉기를 바랍니다.</p>
+    </div>
+    <div class="equation">
+      <article class="eq-card rv">
+        <div class="hanja">泗沘</div>
+        <h3>사비<small>Sabi</small></h3>
+        <p>538년 성왕이 도읍을 옮긴 백제의 마지막 수도. 정림사지와 부소산성, 백마강이 흐르는 오늘의 부여입니다.</p>
+      </article>
+      <div class="eq-op rv d1">+</div>
+      <article class="eq-card rv d1">
+        <svg class="wing" viewBox="0 0 100 60" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 50 C30 50 60 30 98 4 C80 30 62 44 40 52 M20 50 C40 46 60 38 80 22"/></svg>
+        <div class="hanja">나래</div>
+        <h3>나래<small>Wings</small></h3>
+        <p>‘날개’의 고운 우리말. 더 넓은 세상으로 뻗어 나가는 힘이자, 서로를 향해 다가가는 마음입니다.</p>
+      </article>
+      <div class="eq-op rv d2">=</div>
+      <article class="eq-card result rv d2">
+        <img src="assets/logo-ko-ivory.png" alt="사비나래">
+        <h3>사비나래<small style="color:rgba(243,237,225,.5)">Sabinare</small></h3>
+        <p>붓으로 쓴 로고처럼 꾸밈없이 진솔하게. 지역과 세계, 과거와 오늘을 잇는 국제문화교류 비영리법인입니다.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- HISTORY -->
+<section class="history" id="history">
+  <div class="wrap">
+    <span class="eyebrow rv"><svg><use href="#lotus"/></svg>Sabi &amp; the Sea</span>
+    <h2 class="title rv d1">천사백 년 전에도,<br>우리는 바다를 건너 만났습니다</h2>
+    <p class="lead rv d2">사비 시대 백제는 불교와 기술, 예술을 바다 건너 일본에 전한 문화의 다리였습니다. 사비나래는 그 오래된 교류의 길 위에서 오늘의 만남을 이어갑니다.</p>
+
+    <div class="timeline">
+      <div class="tl rv"><div class="dot"></div><div class="yr">538</div><h4>사비 천도</h4><p>성왕, 웅진에서 사비로 도읍을 옮기다. 백제 문화의 전성기가 열리다.</p></div>
+      <div class="tl rv d1"><div class="dot"></div><div class="yr">6C</div><h4>불교와 문물의 전래</h4><p>백제에서 건너간 불경과 불상, 학자들이 일본 고대 문화의 토대가 되다.</p></div>
+      <div class="tl rv d2"><div class="dot"></div><div class="yr">588</div><h4>장인들의 바닷길</h4><p>백제의 기와 장인과 사찰 기술자들이 일본으로 건너가 아스카데라 건립에 참여하다.</p></div>
+      <div class="tl rv d3"><div class="dot"></div><div class="yr">660</div><h4>사비성의 노을</h4><p>사비성이 함락되고, 많은 백제인이 바다를 건너 새 터전에서 문화를 이어가다.</p></div>
+    </div>
+
+    <div class="bridge rv">그리고 오늘, 사비나래</div>
+
+    <div class="timeline now">
+      <div class="tl rv"><div class="dot"></div><div class="yr">2024</div><h4>제4회 국제문화교류회</h4><p>‘만남, 소통, 변화’ — 일본과의 교류 역사 소개, 합창, 유카타 체험.</p></div>
+      <div class="tl rv d1"><div class="dot"></div><div class="yr">2025</div><h4>제5회 국제문화교류회</h4><p>백제문화 소개와 일본 현지인 강연, 게임과 스몰토크로 함께한 하루.</p></div>
+      <div class="tl rv d2"><div class="dot"></div><div class="yr">2025</div><h4>부여 청소년 오사카 방문</h4><p>청소년 국제교류 지원사업으로 부여 중학생들이 오사카를 찾다.</p></div>
+      <div class="tl rv d3"><div class="dot"></div><div class="yr">2026</div><h4>일본여행 기획단</h4><p>대학생이 직접 기획하는 일본 교류 여행 프로그램을 시작하다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section class="programs" id="programs">
+  <div class="wrap">
+    <div class="prog-head">
+      <div>
+        <span class="eyebrow rv"><svg><use href="#lotus"/></svg>Programs</span>
+        <h2 class="title rv d1">사비나래의 교류 사업</h2>
+      </div>
+      <p class="lead rv d2" style="max-width:440px">지역에서 시작해 세계로. 누구나 언어와 나이의 경계 없이 다른 문화를 만나고 경험할 수 있도록 다양한 프로그램을 운영합니다.</p>
+    </div>
+    <div class="prog-grid">
+      <a class="prog rv" href="#news">
+        <div class="thumb"><img src="assets/poster-5th.jpg" alt="제5회 국제문화교류회 포스터" style="object-position:50% 30%"></div>
+        <div class="body">
+          <span class="no">01</span>
+          <h3>국제문화교류회</h3>
+          <p>부여에 사는 외국인 주민과 지역민이 한자리에 모여 백제문화를 소개하고, 강연·합창·전통의상 체험·게임으로 서로의 문화를 나눕니다.</p>
+          <div class="tags"><span>부여청년센터</span><span>매년 개최</span><span>누구나</span></div>
+        </div>
+      </a>
+      <a class="prog rv d1" href="#gallery">
+        <div class="thumb"><img src="assets/osaka-12.jpg" alt="오사카 방문 단체 사진" style="object-position:50% 70%"></div>
+        <div class="body">
+          <span class="no">02</span>
+          <h3>청소년 국제교류</h3>
+          <p>부여의 청소년들이 일본 현지를 직접 찾아 또래와 교류하고, 대학·문화유산·도시를 탐방하며 넓은 시야를 키웁니다.</p>
+          <div class="tags"><span>중학생</span><span>오사카</span><span>부여군 후원</span></div>
+        </div>
+      </a>
+      <a class="prog rv" href="#news">
+        <div class="thumb"><img src="assets/poster-japan.jpg" alt="일본여행 기획단 모집 포스터" style="object-position:50% 10%"></div>
+        <div class="body">
+          <span class="no">03</span>
+          <h3>일본여행 기획단</h3>
+          <p>일본 문화와 교류에 관심 있는 대학생이 일본어 스터디와 유학생 교류회를 거쳐, 겨울방학 일본 여행 프로그램을 직접 기획하고 참가합니다.</p>
+          <div class="tags"><span>대학생</span><span>일본어 스터디</span><span>여행 기획</span></div>
+        </div>
+      </a>
+      <a class="prog rv d1" href="#news">
+        <div class="thumb"><img src="assets/global-event.jpg" alt="도쿄 글로벌 이벤트 배너"></div>
+        <div class="body">
+          <span class="no">04</span>
+          <h3>글로벌 이벤트 in 도쿄</h3>
+          <p>현지 단체와 함께 음식과 대화로 나라와 나라를 잇는 교류 행사. ‘지구 속에서 살아가는 나’를 함께 이야기합니다.</p>
+          <div class="tags"><span>Food</span><span>Talking</span><span>한·일·말레이시아</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="gal-head">
+      <div>
+        <span class="eyebrow rv"><svg><use href="#lotus"/></svg>Archive</span>
+        <h2 class="title rv d1" style="margin-bottom:0">교류의 기록</h2>
+      </div>
+      <p class="lead rv d2" style="max-width:420px">2025 청소년 국제교류 지원사업 · 부여 중학생 오사카 방문<br><span style="color:var(--ink-mute);font-size:14px">2025. 10. 31 – 11. 3</span></p>
+    </div>
+    <div class="gal-grid">
+      <figure class="g-big rv"><img src="assets/osaka-12.jpg" alt="" style="object-position:50% 60%"><figcaption>출발 전 단체 사진</figcaption></figure>
+      <figure class="g-tall rv d1"><img src="assets/osaka-08.jpg" alt=""><figcaption>오사카성</figcaption></figure>
+      <figure class="rv d2"><img src="assets/osaka-03.jpg" alt=""><figcaption>도시 탐방</figcaption></figure>
+      <figure class="rv d2"><img src="assets/osaka-05.jpg" alt=""><figcaption>오코노미야키 체험</figcaption></figure>
+      <figure class="g-tall rv"><img src="assets/osaka-11.jpg" alt=""><figcaption>테마파크 견학</figcaption></figure>
+      <figure class="g-wide rv d1"><img src="assets/osaka-10.jpg" alt=""><figcaption>현지 교류의 밤</figcaption></figure>
+      <figure class="rv d2"><img src="assets/osaka-06.jpg" alt=""><figcaption>대학 캠퍼스 방문</figcaption></figure>
+      <figure class="g-wide rv"><img src="assets/osaka-02.jpg" alt=""><figcaption>오사카 거리에서</figcaption></figure>
+      <figure class="rv d1"><img src="assets/osaka-04.jpg" alt=""><figcaption>함께 나누는 식사</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- GREETING -->
+<section class="greeting" id="greeting">
+  <div class="wrap">
+    <div class="portrait rv">
+      <svg class="lotus-bg" aria-hidden="true"><use href="#lotus"/></svg>
+      <div class="frame"><img src="assets/ceo.jpg" alt="사비나래 대표 사진"></div>
+    </div>
+    <div class="text">
+      <span class="eyebrow rv"><svg><use href="#lotus"/></svg>Greeting</span>
+      <blockquote class="rv d1">작은 만남이 쌓여 마음의 다리가 됩니다. 사비에서 시작된 그 다리를, 이제 우리가 다시 놓으려 합니다.</blockquote>
+      <p class="rv d2">백제의 사비는 바다 건너 이웃과 학문과 기술, 예술을 나누던 열린 도시였습니다. 사단법인 사비나래는 그 정신을 오늘의 부여에서 이어가고자 합니다.</p>
+      <p class="rv d2">언어가 서툴러도, 처음 만나는 사이여도 괜찮습니다. 함께 밥을 먹고, 노래를 부르고, 서로의 이야기를 듣는 자리에서 아이들은 세계를 배우고 어른들은 이웃을 얻습니다. 앞으로도 지역과 세계를 잇는 따뜻한 날개가 되겠습니다.</p>
+      <div class="sign rv d3">
+        <small>사단법인 사비나래 대표</small>
+        <b>○ ○ ○</b><span class="placeholder">성함 입력</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="news" id="news">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow rv"><svg><use href="#lotus"/></svg>News</span>
+      <h2 class="title rv d1">사비나래 소식</h2>
+      <p class="lead rv d2">모집 공고와 행사 소식은 인스타그램 <a href="https://www.instagram.com/sabinare_buyeo" target="_blank" rel="noopener" style="border-bottom:1px solid">@sabinare_buyeo</a>에서도 가장 먼저 만나보실 수 있습니다.</p>
+    </div>
+    <div class="news-list rv d1">
+      <a class="news-item" href="#contact"><span class="badge">모집</span><div><h4>2026 일본여행 기획단 모집</h4><p>일본 문화와 교류에 관심 있는 대학생 · 일본어 능력 필수 아님</p></div><time>26.05.07 – 05.22</time></a>
+      <a class="news-item" href="#contact"><span class="badge">행사</span><div><h4>기획단을 위한 미니 교류회</h4><p>일본 유학생과 함께하는 문화체험</p></div><time>26.06.03</time></a>
+      <a class="news-item" href="#gallery"><span class="badge gray">활동</span><div><h4>2025 청소년 국제교류 지원사업 — 오사카 방문</h4><p>부여 중학생 일본 오사카 방문 프로그램 · 후원 부여군</p></div><time>25.10.31</time></a>
+      <a class="news-item" href="#history"><span class="badge gray">행사</span><div><h4>제5회 국제문화교류회</h4><p>부여청년센터 다목적홀 · 백제문화 소개, 강연, 합창, 유카타 체험</p></div><time>25.07.19</time></a>
+      <a class="news-item" href="#history"><span class="badge gray">행사</span><div><h4>제4회 국제문화교류회 ‘만남, 소통, 변화’</h4><p>부여청년센터 다목적홀 · 교류 역사 소개, 스피치, 참여미술</p></div><time>24.07.06</time></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <svg class="lotus-big rv" aria-hidden="true"><use href="#lotus"/></svg>
+    <h2 class="rv d1">함께 나래를 펴실 분을<br>기다립니다</h2>
+    <p class="rv d2">프로그램 참여, 후원, 협력 기관 제휴 등 무엇이든 편하게 문의해 주세요.</p>
+    <div class="contact-row rv d3">
+      <a class="contact-card" href="tel:010-5231-0437">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>
+        <span><small>CALL</small><b>010-5231-0437</b></span>
+      </a>
+      <a class="contact-card" href="https://www.instagram.com/sabinare_buyeo" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        <span><small>INSTAGRAM</small><b>@sabinare_buyeo</b></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="top">
+      <div class="logos"><img src="assets/logo-ko-ivory.png" alt="사비나래"><img src="assets/logo-en-ivory.png" alt="Sabinare"></div>
+      <dl>
+        <dt>법인명</dt><dd>사단법인 사비나래</dd>
+        <dt>소재지</dt><dd>충청남도 부여군 <span class="placeholder">상세주소 입력</span></dd>
+        <dt>문의</dt><dd>010-5231-0437 · @sabinare_buyeo</dd>
+        <dt>후원</dt><dd>부여군</dd>
+      </dl>
+    </div>
+    <div class="bottom">
+      <span>© 2026 Sabinare. All rights reserved.</span>
+      <span>사비에서 세계로, 나래를 펴다</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hd=document.getElementById('hd');
+  const onScroll=()=>hd.classList.toggle('scrolled',scrollY>40);
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  const nav=document.getElementById('nav');
+  document.getElementById('burger').addEventListener('click',()=>nav.classList.toggle('open'));
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+  requestAnimationFrame(()=>document.getElementById('hero').classList.add('in'));
+</script>
+</body>
+</html>
